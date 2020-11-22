@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="admin/backstage-fragments :: head(~{::title})">
+		<meta charset="utf-8" content="width=device-width,initial-scale=1.0">
+		<title>分类管理</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" >
+		<link rel="stylesheet" href="../../static/css/style.css" />
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav th:replace="admin/backstage-fragments :: menu(2)"  class="ui inverted attached segment i-padded-tb-mini i-shadow-small">
+		
+			<div class="ui container">
+				<div class="ui inverted secondary stackable menu">
+					<img class="ui image item" src="../../static/image/logo.png" style="width: 85px;max-width: 100%;" />
+					<!--<h2 class="ui teal header item">管理后台</h2>-->
+					<a href="#" class="i-item item i-mobile-hide"><i class="home icon"></i>博客</a>
+					<a href="#" class="active i-item item i-mobile-hide"><i class="idea icon"></i>分类</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="tags icon"></i>标签</a>
+					<div class="right i-item i-mobile-hide menu">
+						<div class="ui dropdown item">
+							<div class="text">
+								<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+								lbs
+							</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<a href="#" class="item">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="ui menu toggle black icon button i-right-top i-mobile-show">
+				<i class="sidebar icon"></i>
+			</a>
+			
+			
+			
+		</nav>
+		<div class="ui attached pointing menu">
+			<div class="ui container">
+				<a href="#" th:href="@{/admin/types/input}" class="item">新增</a>
+				<a href="#" th:href="@{/admin/types}" class="teal active item">列表</a>
+			</div>
+			
+		</div>
+		<br/>
+		<br/>
+		<!-- 中间内容 -->
+		<div class="i-padded-tb-big i-container-small">
+
+			<div class="ui container">
+				<div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+					<i class="close icon"></i>
+					<div class="header">提示：</div>
+					<p th:text="${message}">恭喜，操作成功</p>
+				</div>
+				<table class="ui celled table">
+					<thead class="ui center aligned">
+					<tr>
+						<th></th>
+						<th>名称</th>
+						<th>操作</th>
+					</tr>
+					</thead>
+					<tbody class="ui center aligned">
+					<tr th:each="type,iterStat : ${page.content}">
+						<td th:text="${iterStat.count}">1</td>
+						<td th:text="${type.name}">Java基础</td>
+						<td>
+							<a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal button">编辑</a>
+							<a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red button">删除</a>
+						</td>
+					</tr>
+
+					</tbody>
+					<tfoot>
+					<tr>
+						<th colspan="6">
+							<div th:if="${page.totalPages}>1" class="ui mini pagination menu">
+								<a href="#" th:href="@{/admin/types(page=${page.number}-1)}" th:unless="${page.first}" class="item">上一页</a>
+								<a href="#" th:href="@{/admin/types(page=${page.number}+1)}" th:unless="${page.last}" class="item">下一页</a>
+							</div>
+							<a href="#" th:href="@{/admin/types/input}" class="ui mini right floated teal basic button i-margin-tb-mini">新增</a>
+						</th>
+					</tr>
+
+					</tfoot>
+				</table>
+			</div>
+
+		</div>
+		<br/>
+		<br/>
+	
+		<!-- 底部footer-->
+		<footer th:replace="admin/backstage-fragments :: footer" class="ui inverted vertical segment i-padded-tb-massive">
+			<div class="ui center aligned container">
+				<div class="ui inverted divided stackable grid">
+					<div class="three wide column">
+						<div class="ui inverted link list">
+							<div class="item">
+								<img class="ui rounded image" style="width: 110px;" alt="" src="../../static/image/tu.jpg"/>
+							</div>	
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">最新博客</h4>
+						<div class="ui inverted link list">
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">请联系我</h4>
+						<p>Email：lbs8568@gmail.com</p>
+						<p>QQ：444606332</p>
+					</div>
+					<div class="seven wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">lbs_Blog</h4> 
+						<p class="i-text-thin i-text-spaced i-opacity-mini">这是我的个人博客，里面记录着学习编程的进度和关于编程的资料、问题、新技术相关的任何内容...</p>
+					</div>
+				</div>
+				<div class="ui inverted section divider"></div>
+				<p class="i-text-thin i-text-spaced i-opacity-tiny">才能彻底不成熟的名称是陈女士沙茶面每次你每次，吗 明年初的 魔刹石测试</p>
+			</div>
+		</footer>
+		<!--/*/<th:block th:replace="admin/backstage-fragments :: script">/*/-->
+			<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+		<!--/*/</th:block>/*/-->
+			<script>
+				$('.menu.toggle').click(function(){
+					$('.i-item').toggleClass('i-mobile-hide');
+				});
+				$('.ui.dropdown').dropdown({
+					on : 'hover'
+				});
+
+				// 消息提示初始化可关闭信息
+				$('.message .close')
+						.on('click', function() {
+							$(this)
+									.closest('.message')
+									.transition('fade');
+						});
+			</script>
+	</body>
+	
+
+</html>

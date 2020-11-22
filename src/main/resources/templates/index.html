@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="fragment/fragments  :: head(~{::title})">
+		<meta charset="utf-8" content="width=device-width,initial-scale=1.0">
+		<title>首页</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" >
+		<link rel="stylesheet" href="../static/css/style.css"/>
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav th:replace="fragment/fragments :: menu(1)" class="ui inverted attached segment i-padded-tb-mini i-shadow-small">
+			
+			<div class="ui container">
+				<div class="ui inverted secondary stackable menu">
+					<img class="ui image item" src="../static/image/logo.png" th:src="@{/image/logo.png}" style="width: 85px;max-width: 100%;" />
+					<a href="#" class="active i-item item i-mobile-hide"><i class="home icon"></i>首页</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="idea icon"></i>分类</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="tags icon"></i>标签</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="clone icon"></i>归档</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="info icon"></i>关于我</a>
+					<div class="right i-item item i-mobile-hide">
+						<div class="ui icon inverted transparent input">
+							<input type="text"  placeholder="Search..."/>
+							<i class="search link icon"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="ui menu toggle black icon button i-right-top i-mobile-show">
+				<i class="sidebar icon"></i>
+			</a>
+			
+			
+			
+		</nav>
+		<!-- 中间内容 -->
+		<div class="i-padded-tb-large i-container animate__fadeIn">
+			<div class="ui container">
+				<div class="ui stackable  grid">
+					<!-- 左边博客列表 -->
+					<div class="eleven wide column">
+						<div class="ui top attached segment">
+							<div class="ui middle aligned two column grid">
+								<div class="column">
+									<h3 class="ui teal header">博客</h3>
+								</div>
+								<div class="right aligned column">
+									共<h2 class="ui orange header i-inline-block i-text-thin" th:text="${page.totalElements}"> 10 </h2>篇
+								</div>
+							</div>
+						</div>
+						
+						<div class="ui attached segment">
+							<div class="ui padded vertical segment i-padded-tb-large" th:each="blog : ${page.content}">
+								<div class="ui middle aligned mobile reversed stackable grid">
+									<div class="eleven wide column">
+										<h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="i-color-black" th:text="${blog.title}">你真的努力吗？别骗自己了</a></h3>
+										<p class="i-text" th:text="|${blog.description}......|">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+										<div class="ui grid">
+											<div class="eleven wide column">
+												<div class="ui mini horizontal link list">
+													<div class="item">
+														<img src="https://picsum.photos/id/1025/100/100" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image" />
+														<div class="content">
+															<a href="#" class="header" th:text="${blog.user.nickname}">lbs</a>
+														</div> 
+													</div>
+													<div class="item">
+														<i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-10-30</span>
+													</div>
+													<div class="item">
+														<i class="eye icon"></i> <span th:text="${blog.views}">86</span>
+													</div>
+												</div>
+											</div>
+											<div class="right aligned five wide column">
+												<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny" th:text="${blog.type.name}">故事</a>
+											</div>
+										</div>
+									
+									</div>
+									<div class="five wide column">
+										<a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" >
+											<img  class="ui rounded image" src="https://picsum.photos/id/1014/800/500" th:src="@{${blog.firstPicture}}"/>
+										</a>
+									</div>
+								</div>
+							</div>
+
+							<!--/*-->
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">Java数组</h3>
+											<p class="i-text">数组无论在哪种编程语言中都算是最重要的数据结构之一，同时不同语言的实现及处理也不尽相同。但凡写过一些程序的人都知道数组的价值及理解数组的重要性，与链表一道，数组成为了基本的数据结构。...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i>2020-10-31</span>
+														</div>
+														<div class="item">
+															<i class="eye icon"></i>118</span>
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">Java基础</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/1012/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/1054/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/108/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/129/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/156/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/171/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/177/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/2/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui padded vertical segment i-padded-tb-large">
+									<div class="ui mobile reversed stackable grid">
+										<div class="eleven wide column">
+											<h3 class="ui header">你真的努力吗？别骗自己了</h3>
+											<p class="i-text">这世界上所有的东西都是等价的，你不努力就想着一步登天，别做梦了，好吗？  以前没少看“鸡汤”文,而努力似乎成为这些鸡汤的“佐料”,动辄就是你现在不努力未来会面临那些风险,终将有一天你会感激现在努力的...</p>
+											<div class="ui grid">
+												<div class="eleven wide column">
+													<div class="ui mini horizontal link list">
+														<div class="item">
+															<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+															<div class="content">
+																<a href="#" class="header">lbs</a>
+															</div>
+														</div>
+														<div class="item">
+															<i class="calendar icon"></i> 2020-10-30
+														</div>
+														<div class="item">
+															<i class="eye icon"></i> 86
+														</div>
+													</div>
+												</div>
+												<div class="right aligned five wide column">
+													<a href="#" target="_blank" class="ui blue basic label i-text-thin i-padded-tb-tiny">故事</a>
+												</div>
+											</div>
+
+										</div>
+										<div class="five wide column">
+											<a href="#" target="_blank">
+												<img class="ui rounded image i-margin-top-big" src="https://picsum.photos/id/203/800/500" />
+											</a>
+										</div>
+									</div>
+								</div>
+							<!--*/-->
+							
+						
+						
+						</div>
+						
+						<!-- 底部内容 -->
+						<div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+							<div class="ui middle aligned two column grid">
+								<div class="column">
+									<a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+								</div>
+								<div class="right aligned column">
+									<a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					<!-- 右边内容 -->
+					<div class="five wide column">
+						<!-- 分类 -->
+						<div class="ui segments">
+							<div class="ui secondary segment">
+								<div class="ui two column grid">
+									<div class="column">
+										<i class="orange idea icon"></i>分类
+									</div>
+									<div class="right aligned column">
+										<a href="#" th:href="@{/types/-1}">more<i class="angle double right icon"></i></a>
+									</div>
+								</div>
+							</div>
+							<div class="ui blue segment">
+								<div class="ui fluid vertical menu">
+									<a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item" th:each="type : ${types}">
+										<span th:text="${type.name}">学习日志</span>
+										<div class="ui blue basic left pointing label" th:text="${#arrays.length(type.blogs)}">8</div>
+									</a>
+									<!--/*-->
+										<a href="#" class="item">
+											学习日志
+											<div class="ui blue basic left pointing label">8</div>
+										</a>
+										<a href="#" class="item">
+											学习日志
+											<div class="ui blue basic left pointing label">8</div>
+										</a>
+										<a href="#" class="item">
+											学习日志
+											<div class="ui blue basic left pointing label">8</div>
+										</a>
+										<a href="#" class="item">
+											学习日志
+											<div class="ui blue basic left pointing label">8</div>
+										</a>
+										<a href="#" class="item">
+											学习日志
+											<div class="ui blue basic left pointing label">8</div>
+										</a>
+									<!--*/-->
+								</div>
+							</div>
+						</div>
+						<!-- 标签 -->
+						<div class="ui segments i-margin-top-large">
+								<div class="ui secondary segment">
+									<div class="ui two column grid">
+										<div class="column">
+											<i class="brown tags icon"></i>标签
+										</div>
+										<div class="right aligned column">
+											<a href="#" th:href="@{/tags/-1}">more<i class="angle double right icon"></i></a>
+										</div>
+									</div>
+								</div>
+								<div class="ui blue segment">
+									<a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin" th:each="tag : ${tags}">
+										<span th:text="${tag.name}">方法</span><div class="detail" th:text="${#arrays.length(tag.blogs)}">8</div>
+									</a>
+									<!--/*-->
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											故事<div class="detail">5</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											JAVA<div class="detail i-text-thin">8</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											故事<div class="detail i-text-thin">5</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											Java基础<div class="detail i-text-thin">8</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											故事<div class="detail i-text-thin">5</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											Java基础<div class="detail i-text-thin">8</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											故事<div class="detail i-text-thin">5</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											Java基础<div class="detail i-text-thin">8</div>
+										</a>
+										<a href="" target="_blank" class="ui mini blue tag label i-margin-tb-tiny i-text-thin">
+											故事<div class="detail i-text-thin">5</div>
+										</a>
+									<!--*/-->
+								</div>
+						</div>
+						
+						
+						<!-- 最新推荐 -->
+						<div class="ui segments i-margin-top-large">
+							<div class="ui secondary segment">
+								<i class="red bookmark icon"></i>最新推荐
+							</div>
+							<div class="ui segment" th:each="blog : ${recommendBlogs}">
+								<a href="#" th:href="@{/blog/{id}(id=${blog.id})}"  target="_blank" class="i-color-black i-text-thin" th:text="${blog.title}">用户故事（User Story）</a>
+							</div>
+							<!--/*-->
+								<div class="ui segment">
+									<a href="#" target="_blank" class="i-color-black i-text-thin">用户故事（User Story）</a>
+								</div>
+								<div class="ui segment">
+									<a href="#" target="_blank" class="i-color-black i-text-thin">用户故事（User Story）</a>
+								</div>
+								<div class="ui segment">
+									<a href="#" target="_blank" class="i-color-black i-text-thin">用户故事（User Story）</a>
+								</div>
+								<div class="ui segment">
+									<a href="#" target="_blank" class="i-color-black i-text-thin">用户故事（User Story）</a>
+								</div>
+							<!--*/-->
+						</div>
+						
+						<!-- 二维码 -->
+						<h4 class="ui horizontal divider hedader i-margin-top-large">扫码关注我</h4>
+						<div class="ui centered card" style="width: 11em;">
+							<img  src="../static/image/wechat.png" th:src="@{/image/wechat.png}"  alt="" class="ui rounded image"/>
+						</div>
+
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	
+		<!-- 底部footer-->
+		<footer th:replace="fragment/fragments  :: footer" class="ui inverted vertical segment i-padded-tb-massive">
+			
+			<div class="ui center aligned container">
+				<div class="ui inverted divided stackable grid">
+					<div class="three wide column">
+						<div class="ui inverted link list">
+							<div class="item">
+								<img class="ui rounded image" style="width: 110px;" alt="" src="../static/image/tu.jpg"/>
+							</div>	
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">最新博客</h4>
+						<div class="ui inverted link list">
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">请联系我</h4>
+						<p>Email：lbs8568@gmail.com</p>
+						<p>QQ：444606332</p>
+					</div>
+					<div class="seven wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">lbs_Blog</h4> 
+						<p class="i-text-thin i-text-spaced i-opacity-mini">这是我的个人博客，里面记录着学习编程的进度和关于编程的资料、问题、新技术相关的任何内容...</p>
+					</div>
+				</div>
+				<div class="ui inverted section divider"></div>
+				<p class="i-text-thin i-text-spaced i-opacity-tiny">才能彻底不成熟的名称是陈女士沙茶面每次你每次，吗 明年初的 魔刹石测试</p>
+			</div>
+
+		</footer>
+		<!--/*/<th:block th:replace="fragment/fragments  :: script">/*/-->
+			<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+		<!--/*/</th:block>/*/-->
+		<script>
+			$('.menu.toggle').click(function(){
+				$('.i-item').toggleClass('i-mobile-hide');
+			});
+		</script>
+	</body>
+	
+
+</html>

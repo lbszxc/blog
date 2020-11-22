@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="fragment/fragments  :: head(~{::title})">
+		<meta charset="utf-8" content="width=device-width,initial-scale=1.0">
+		<title>关于我</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" >
+		<link rel="stylesheet" href="../static/css/style.css" />
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav th:replace="fragment/fragments :: menu(5)" class="ui inverted attached segment i-padded-tb-mini i-shadow-small">
+		
+			<div class="ui container">
+				<div class="ui inverted secondary stackable menu">
+					<img class="ui image item" src="../static/image/logo.png" style="width: 85px;max-width: 100%;" />
+					<a href="#" class="i-item item i-mobile-hide"><i class="home icon"></i>首页</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="dea icon"></i>分类</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="ags icon"></i>标签</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="lone icon"></i>归档</a>
+					<a href="#" class="active i-item item i-mobile-hide"><i class="info icon"></i>关于我</a>
+					<div class="right i-item item i-mobile-hide">
+						<div class="ui icon inverted transparent input">
+							<input type="text"  placeholder="Search..."/>
+							<i class="search link icon"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="ui menu toggle black icon button i-right-top i-mobile-show">
+				<i class="sidebar icon"></i>
+			</a>
+			
+			
+			
+		</nav>
+		<!-- 中间内容 -->
+		<div class="i-padded-tb-big i-container animate__fadeIn">
+			<div class="ui container">
+				<div class="ui stackable grid">
+					<div class="nine wide column">
+						<div class="ui segment">
+							<img src="https://picsum.photos/id/1025/800/600" alt="" class="ui rounded image" />
+						</div>
+						
+					</div>
+					<div class="seven wide column">
+						<div class="ui top attached segment">
+							<div class="ui header">关于我</div>
+						</div>
+						<div class="ui attached segment">
+							<p class="i-text">lbs，一个程序小白，喜欢探索在代码世界里，一个终生的学习者，誓将学习无限循环，同时也希望能够结实共同成长的小伙伴。</p>
+							<p class="i-text">热爱编程，喜欢折腾，正在研究高效的学习编程技术的方法......</p>
+						</div>
+						<div class="ui attached segment">
+							<div class="ui orange basic left pointing label">编程</div>
+							<div class="ui orange basic left pointing label">方法</div>
+							<div class="ui orange basic left pointing label">写作</div>
+							<div class="ui orange basic left pointing label">思考</div>
+						</div>
+						<div class="ui attached segment">
+							<div class="ui blue basic left pointing label i-margin-tb-tiny">Java</div>
+							<div class="ui blue basic left pointing label label i-margin-tb-tiny">Android</div>
+							<div class="ui blue basic left pointing label label i-margin-tb-tiny">MySQL</div>
+							<div class="ui blue basic left pointing label label i-margin-tb-tiny">Html</div>
+							<div class="ui blue basic left pointing label label i-margin-tb-tiny">C语言</div>
+							<div class="ui blue basic left pointing label label i-margin-tb-tiny">...</div>
+						</div>
+						<div class="ui bottom attached segment">
+							<a href="#" class="ui circular icon button"><i class="github icon"></i></a>
+							<a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+							<a href="#" class="ui qq circular icon button"><i class="qq icon"></i></a>
+							<a href="#" class="ui circular icon button" data-content="15170785990" data-position="bottom center"><i class="weibo icon"></i></a>
+						</div>
+						
+						<div class="ui wechat-qr flowing popup transition hidden">
+							<img src="../static/image/wechat.png" th:href="@{/image/wechat.png}" alt="" class="ui rounded image" style="width: 100px;"/>
+						</div>
+						<div class="ui qq-qr flowing popup transition hidden">
+							<img src="../static/image/qq.png" th:href="@{/image/qq.png}" alt="" class="ui rounded image" style="width: 120px;"/>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<br/>
+		<br/>
+	
+		<!-- 底部footer-->
+		<footer th:replace="fragment/fragments  :: footer" class="ui inverted vertical segment i-padded-tb-massive">
+			<div class="ui center aligned container">
+				<div class="ui inverted divided stackable grid">
+					<div class="three wide column">
+						<div class="ui inverted link list">
+							<div class="item">
+								<img class="ui rounded image" style="width: 110px;" alt="" src="../static/image/tu.jpg"/>
+							</div>	
+						</div>
+					</div>
+					<div class="three wide column">						<h4 class="ui inverted header i-text-thin i-text-spaced">最新博客</h4>
+						<div class="ui inverted link list">
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">请联系我</h4>
+						<p>Email：lbs8568@gmail.com</p>
+						<p>QQ：444606332</p>
+					</div>
+					<div class="seven wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">lbs_Blog</h4> 
+						<p class="i-text-thin i-text-spaced i-opacity-mini">这是我的个人博客，里面记录着学习编程的进度和关于编程的资料、问题、新技术相关的任何内容...</p>
+					</div>
+				</div>
+				<div class="ui inverted section divider"></div>
+				<p class="i-text-thin i-text-spaced i-opacity-tiny">才能彻底不成熟的名称是陈女士沙茶面每次你每次，吗 明年初的 魔刹石测试</p>
+			</div>
+		</footer>
+		<!--/*/<th:block th:replace="fragment/fragments  :: script">/*/-->
+			<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+		<!--/*/</th:block>/*/-->
+		<script>
+			$('.menu.toggle').click(function(){
+				$('.i-item').toggleClass('i-mobile-hide');
+			});
+			
+			$('.wechat').popup({
+				popup : $('.wechat-qr'),
+				position: 'bottom center'
+			});
+			
+			$('.qq').popup({
+				popup : $('.qq-qr'),
+				position: 'bottom center'
+			});
+			
+		</script>
+	</body>
+	
+
+</html>

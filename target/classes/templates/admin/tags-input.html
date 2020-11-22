@@ -1,0 +1,155 @@
+<!DOC html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head th:replace="admin/backstage-fragments :: head(~{::title})">
+		<meta charset="utf-8" content="width=device-width,initial-scale=1.0">
+		<title>标签新增</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css" >
+		<link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css"/>
+		<link rel="stylesheet" href="../../static/css/style.css" />
+	</head>
+	<body>
+		<!-- 导航 -->
+		<nav th:replace="admin/backstage-fragments :: menu(3)" class="ui inverted attached segment i-padded-tb-mini i-shadow-small">
+		
+			<div class="ui container">
+				<div class="ui inverted secondary stackable menu">
+					<img class="ui image item" src="../../static/image/logo.png" style="width: 85px;max-width: 100%;" />
+					<!--h2 class="ui teal header item">管理后台</h2>-->
+					<a href="#" class="i-item item i-mobile-hide"><i class="home icon"></i>博客</a>
+					<a href="#" class="i-item item i-mobile-hide"><i class="idea icon"></i>分类</a>
+					<a href="#" class="active i-item item i-mobile-hide"><i class="tags icon"></i>标签</a>
+					<div class="right i-item i-mobile-hide menu">
+						<div class="ui dropdown item">
+							<div class="text">
+								<img src="https://picsum.photos/id/1025/100/100" alt="" class="ui avatar image" />
+								lbs
+							</div>
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<a href="#" class="item">注销</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="ui menu toggle black icon button i-right-top i-mobile-show">
+				<i class="sidebar icon"></i>
+			</a>
+			
+			
+			
+		</nav>
+		<div class="ui attached pointing menu">
+			<div class="ui container">
+				<a href="#" th:href="@{/admin/tags/input}" class="teal active item">新增</a>
+				<a href="#" th:href="@{/admin/tags}" class="item">列表</a>
+			</div>
+			
+		</div>
+		<!-- 中间内容 -->
+		<div class="i-padded-tb-big i-container-small">
+			<div class="ui container">
+				<form action="#" th:object="${tag}" th:action="*{id}==null ? @{/admin/tags/add} : @{/admin/tags/edit/{id}(id=*{id})}" method="post" class="ui form">
+					<input type="hidden" name="id" th:value="*{id}">
+					<div class="required field">
+						<div class="ui left labeled input">
+							<label class="ui teal basic label">名称</label>
+							<input type="text" name="name" placeholder="标签名称" th:value="*{name}"/>
+						</div>
+					</div>
+					<div class="ui error message"></div>
+					<!--/*/
+						<div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+							<i class="close icon"></i>
+							<div class="header">提示：</div>
+							<p th:errors="*{name}">提交消息不符合规则</p>
+						</div>
+					/*/-->
+
+					<div class="ui right aligned container">
+						<button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+						<button class="ui teal submit button">提交</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	
+		<!-- 底部footer-->
+		<footer th:replace="admin/backstage-fragments :: footer" class="ui inverted vertical segment i-padded-tb-massive">
+			<div class="ui center aligned container">
+				<div class="ui inverted divided stackable grid">
+					<div class="three wide column">
+						<div class="ui inverted link list">
+							<div class="item">
+								<img class="ui rounded image" style="width: 110px;" alt="" src="../../static/image/tu.jpg"/>
+							</div>	
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">最新博客</h4>
+						<div class="ui inverted link list">
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+							<a href="#" class="item">用户故事（User Story）</a>
+						</div>
+					</div>
+					<div class="three wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">请联系我</h4>
+						<p>Email：lbs8568@gmail.com</p>
+						<p>QQ：444606332</p>
+					</div>
+					<div class="seven wide column">
+						<h4 class="ui inverted header i-text-thin i-text-spaced">lbs_Blog</h4> 
+						<p class="i-text-thin i-text-spaced i-opacity-mini">这是我的个人博客，里面记录着学习编程的进度和关于编程的资料、问题、新技术相关的任何内容...</p>
+					</div>
+				</div>
+				<div class="ui inverted section divider"></div>
+				<p class="i-text-thin i-text-spaced i-opacity-tiny">才能彻底不成熟的名称是陈女士沙茶面每次你每次，吗 明年初的 魔刹石测试</p>
+			</div>
+		</footer>
+		<!--/*/<th:block th:replace="admin/backstage-fragments :: script">/*/-->
+			<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+		<!--/*/</th:block>/*/-->
+			<script type="text/javascript">
+
+				$('.menu.toggle').click(function(){
+					$('.i-item').toggleClass('i-mobile-hide');
+				});
+				$('.ui.dropdown').dropdown({
+					on : 'hover'
+				});
+				$('.ui.form').form({
+					fields : {
+						name : {
+							identifier : 'name',
+							rules : [{
+								type: 'empty',
+								prompt: '请输入标签名称'
+							}]
+						}
+					}
+				});
+				// 消息提示初始化可关闭信息
+				$('.message .close')
+						.on('click', function() {
+							$(this)
+									.closest('.message')
+									.transition('fade');
+						});
+			</script>
+	</body>
+	
+
+</html>
