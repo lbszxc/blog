@@ -15,7 +15,7 @@ import java.util.List;
 public class Blog {
 
     @Id
-    @GeneratedValue                              //Id设置为自增
+    @GeneratedValue                                 //Id设置为自增
     private Long id;                               //ID
 
     private String title;                         //标题

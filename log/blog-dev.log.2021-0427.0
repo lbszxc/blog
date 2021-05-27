@@ -1,0 +1,84 @@
+2021-04-27 20:36:05.715  INFO 7236 --- [restartedMain] com.lbs.blog.BlogApplication             : Starting BlogApplication using Java 1.8.0_91 on LAPTOP-O365UPUI with PID 7236 (D:\MavenProject\blog\target\classes started by 说好的幸福呢 in D:\MavenProject\blog)
+2021-04-27 20:36:05.721 DEBUG 7236 --- [restartedMain] com.lbs.blog.BlogApplication             : Running with Spring Boot v2.4.0, Spring v5.3.1
+2021-04-27 20:36:05.721  INFO 7236 --- [restartedMain] com.lbs.blog.BlogApplication             : The following profiles are active: dev
+2021-04-27 20:36:05.761  INFO 7236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-04-27 20:36:05.762  INFO 7236 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-04-27 20:36:06.363  INFO 7236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2021-04-27 20:36:06.424  INFO 7236 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+2021-04-27 20:36:07.114  INFO 7236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-04-27 20:36:07.124  INFO 7236 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-04-27 20:36:07.124  INFO 7236 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-04-27 20:36:07.225  INFO 7236 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-04-27 20:36:07.226  INFO 7236 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1463 ms
+2021-04-27 20:36:07.334  INFO 7236 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-04-27 20:36:07.377  INFO 7236 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-04-27 20:36:07.434  INFO 7236 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.23.Final
+2021-04-27 20:36:07.524  WARN 7236 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-04-27 20:36:07.555  INFO 7236 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-04-27 20:36:07.662  INFO 7236 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-04-27 20:36:07.663  WARN 7236 --- [task-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2021-04-27 20:36:07.821  INFO 7236 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2021-04-27 20:36:08.098  INFO 7236 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-04-27 20:36:08.129  INFO 7236 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-04-27 20:36:08.131  INFO 7236 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2021-04-27 20:36:08.191  INFO 7236 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-04-27 20:36:08.205  INFO 7236 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2021-04-27 20:36:09.147  INFO 7236 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-04-27 20:36:09.154  INFO 7236 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-04-27 20:36:09.722  INFO 7236 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2021-04-27 20:36:09.728  INFO 7236 --- [restartedMain] com.lbs.blog.BlogApplication             : Started BlogApplication in 4.45 seconds (JVM running for 5.646)
+2021-04-27 20:36:19.377  INFO 7236 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-04-27 20:36:19.377  INFO 7236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-04-27 20:36:19.378  INFO 7236 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-04-27 20:36:19.409  INFO 7236 --- [http-nio-8080-exec-1] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-04-27 20:36:19.561  WARN 7236 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-04-27 20:36:19.592  WARN 7236 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2021-04-27 20:36:19.598  INFO 7236 --- [http-nio-8080-exec-1] com.lbs.blog.aspect.LogAspect            : Result : index
+2021-04-27 20:36:20.283  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:36:20.288  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:36:22.033  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-04-27 20:36:22.045  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : types
+2021-04-27 20:36:22.290  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:36:22.295  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:36:26.667  INFO 7236 --- [http-nio-8080-exec-9] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/types/14', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 14, {}]}
+2021-04-27 20:36:26.672  INFO 7236 --- [http-nio-8080-exec-9] com.lbs.blog.aspect.LogAspect            : Result : types
+2021-04-27 20:36:26.906  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:36:26.911  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:36:30.047  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/types/4', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 4, {}]}
+2021-04-27 20:36:30.052  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : types
+2021-04-27 20:36:30.290  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:36:30.297  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:40:18.749  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TagShowController.tags', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-04-27 20:40:18.805  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : tags
+2021-04-27 20:40:19.064  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:40:19.068  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:45:13.987  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.ArchiveShowController.archives', args=[{}]}
+2021-04-27 20:45:14.094  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : archives
+2021-04-27 20:45:14.358  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:45:14.362  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:45:15.107  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/about', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.AboutShowController.about', args=[]}
+2021-04-27 20:45:15.108  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : about
+2021-04-27 20:45:15.389  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:45:15.392  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:45:17.328  INFO 7236 --- [http-nio-8080-exec-5] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.ArchiveShowController.archives', args=[{}]}
+2021-04-27 20:45:17.333  INFO 7236 --- [http-nio-8080-exec-5] com.lbs.blog.aspect.LogAspect            : Result : archives
+2021-04-27 20:45:17.539  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:45:17.544  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:49:55.476  INFO 7236 --- [http-nio-8080-exec-3] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-04-27 20:49:55.481  INFO 7236 --- [http-nio-8080-exec-3] com.lbs.blog.aspect.LogAspect            : Result : types
+2021-04-27 20:49:55.747  INFO 7236 --- [http-nio-8080-exec-6] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:49:55.751  INFO 7236 --- [http-nio-8080-exec-6] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:49:56.517  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2021-04-27 20:49:56.524  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : index
+2021-04-27 20:49:56.815  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:49:56.817  INFO 7236 --- [http-nio-8080-exec-10] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:50:00.562  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/blog/21', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.blog', args=[21, {}]}
+2021-04-27 20:50:00.794  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : blog
+2021-04-27 20:50:01.117  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 20:50:01.121  INFO 7236 --- [http-nio-8080-exec-2] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
+2021-04-27 20:50:01.197  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/comments/21', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.CommentController.comments', args=[21, {}]}
+2021-04-27 20:50:01.221  INFO 7236 --- [http-nio-8080-exec-4] com.lbs.blog.aspect.LogAspect            : Result : blog :: commentList
+2021-04-27 21:22:20.474  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.TagShowController.tags', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2021-04-27 21:22:20.480  INFO 7236 --- [http-nio-8080-exec-7] com.lbs.blog.aspect.LogAspect            : Result : tags
+2021-04-27 21:22:20.748  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : {url='http://localhost:8080/footer/newBlog', ip='0:0:0:0:0:0:0:1', classMethod='com.lbs.blog.controller.IndexController.newBlogs', args=[{}]}
+2021-04-27 21:22:20.751  INFO 7236 --- [http-nio-8080-exec-8] com.lbs.blog.aspect.LogAspect            : Result : fragment/fragments :: newBlogList
